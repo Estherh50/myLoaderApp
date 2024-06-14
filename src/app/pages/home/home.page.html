@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Loader Configuration</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-select [(ngModel)]="loaderConfig" label="Selecciona un loader" aria-label="loader" interface="popover" placeholder="Selecciona un loader">
+            <ion-select-option value="config1">Loader 1</ion-select-option>
+            <ion-select-option value="config2">Loader 2</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+      <ion-button shape="round" color="primary" (click)="showLoader()">Mostrar loader</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <app-loader *ngIf="isLoading" [config]="loaderConfig"></app-loader>
+</ion-content>
